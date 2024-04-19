@@ -36,8 +36,10 @@ class Email {
 
 		// check if email was sent successfully
 		if (resp.status > 299 || resp.status < 200) {
-			throw new Error(`Error sending email: ${resp.status} ${resp.statusText}`);
+			console.log(new Error(`Error sending email: ${resp.status} ${resp.statusText}`), await resp.text(), resp, mcEmail)
+			return "hi"
 		}
+		return "YAY"
 	}
 
 	/**
